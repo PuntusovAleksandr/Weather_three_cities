@@ -1,0 +1,12 @@
+<resources>
+    <string name="api_weather_key">87c71443ef3991f35c5cc3d0467530ef</string>
+    <string name="general_url">http://api.openweathermap.org/data/2.5/forecast/city?</string>
+
+    <string name="app_name">Weather three cities</string>
+    <string name="action_settings">Settings</string>
+    <string name="city">City</string>
+    <string name="dnepr">Днепропетровск</string>
+    <string name="nikopol">Никополь</string>
+    <string name="kiev">Киев</string>
+    <string name="check_internet">Please check your internet connection state</string>
+</resources>

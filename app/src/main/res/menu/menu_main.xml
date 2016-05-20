@@ -1,0 +1,33 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.example.aleksandrp.weatherthreecities.MainActivity">
+
+    <item
+        android:icon="@drawable/ic_settings"
+        android:orderInCategory="1"
+        android:title="@string/action_settings"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/dnepr"
+                android:orderInCategory="100"
+                android:title="@string/dnepr"
+                app:showAsAction="never"/>
+
+            <item
+                android:id="@+id/nikopol"
+                android:orderInCategory="200"
+                android:title="@string/nikopol"
+                app:showAsAction="never"/>
+
+            <item
+                android:id="@+id/kiev"
+                android:orderInCategory="300"
+                android:title="@string/kiev"
+                app:showAsAction="never"/>
+        </menu>
+    </item>
+</menu>
