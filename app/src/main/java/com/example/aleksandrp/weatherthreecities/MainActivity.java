@@ -18,18 +18,11 @@ import android.widget.TextView;
 import com.example.aleksandrp.weatherthreecities.api.LoadParams;
 import com.squareup.picasso.Picasso;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
             ID_DNEPR = "709930",
             ID_NIKOPOL = "700051",
             ID_KIEV = "703448";
+
+    private String keySelectNow;
+    private Timer mTimer;
+    private MyTimerTask mMyTimerTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,13 +62,25 @@ public class MainActivity extends AppCompatActivity {
         mMaxTemp = (TextView) findViewById(R.id.tv_max_temp);
         mState = (TextView) findViewById(R.id.tv_state);
         mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
+
     }
 
     private void setParams(String id) {
-        if (isInternetOn()) {
-            LoadParams mLoadParams = new LoadParams(MainActivity.this, id);
-            mLoadParams.execute();
+        this.keySelectNow = id;
+        if (mTimer != null) {
+            mTimer.cancel();
+            mTimer.purge();
+            mTimer = null;
         }
+        if (mMyTimerTask != null) {
+            mMyTimerTask.cancel();
+            mMyTimerTask = null;
+        }
+        mTimer = new Timer();
+        mMyTimerTask = new MyTimerTask();
+        // delay 10ms, repeat in 1800000 = 30 min
+        mTimer.schedule(mMyTimerTask, 10, 1800000);
+
     }
 
 
@@ -152,6 +161,23 @@ public class MainActivity extends AppCompatActivity {
         Picasso.with(MainActivity.this)
                 .load(mParams[4])
                 .into(mIcon);
+    }
+
+
+    class MyTimerTask extends TimerTask {
+
+        @Override
+        public void run() {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (isInternetOn()) {
+                        LoadParams mLoadParams = new LoadParams(MainActivity.this, keySelectNow);
+                        mLoadParams.execute();
+                    }
+                }
+            });
+        }
     }
 
 }
