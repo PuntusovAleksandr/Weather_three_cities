@@ -18,6 +18,7 @@
         android:id="@+id/tv_title_city"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/tempStyle"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:text="@string/city"
         android:textSize="@dimen/title_size"/>
@@ -33,9 +34,7 @@
             android:id="@+id/iv_icon_weather"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_weight="1"
-            android:src="@mipmap/ic_launcher"
-            />
+            android:layout_weight="1"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,46 +42,106 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_value_temperature"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="0"
-                android:textSize="@dimen/max_size"/>
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_value_temperature"
+                    style="@style/tempStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:gravity="center"
+                    android:text="@string/zero"
+                    android:textSize="@dimen/max_size"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/tempStyle"
+                    android:text="@string/zero"
+                    android:layout_alignParentTop="true"
+                    android:textSize="@dimen/min_size"
+                    android:layout_toRightOf="@+id/tv_value_temperature"
+                    android:layout_toEndOf="@+id/tv_value_temperature"/>
+
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tv_max_temp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Sun"
-                    android:textSize="@dimen/min_size"/>
 
-                <TextView
-                    android:id="@+id/tv_min_temp"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Sun"
-                    android:textSize="@dimen/min_size"/>
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_max_temp"
+                        style="@style/tempMax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/zero"
+                        android:textSize="@dimen/min_size"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/tempMax"
+                        android:text="@string/zero"
+                        android:layout_alignParentTop="true"
+                        android:textSize="@dimen/micro_size"
+                        android:layout_toRightOf="@+id/tv_max_temp"
+                        android:layout_toEndOf="@+id/tv_max_temp"/>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_min_temp"
+                        style="@style/tempMin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/zero"
+                        android:textSize="@dimen/min_size"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/tempMin"
+                        android:text="@string/zero"
+                        android:layout_alignParentTop="true"
+                        android:textSize="@dimen/micro_size"
+                        android:layout_toRightOf="@+id/tv_min_temp"
+                        android:layout_toEndOf="@+id/tv_min_temp"/>
+
+                </RelativeLayout>
 
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_state"
+                style="@style/valData"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Sun"
+                android:text="@string/sun"
                 android:textSize="@dimen/min_size"/>
 
 
