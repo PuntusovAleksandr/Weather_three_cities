@@ -1,6 +1,5 @@
 <resources>
 
-    <string name="app_name" translatable="false">Weather three cities</string>
     <string name="dnepr">Днепропетровск</string>
     <string name="nikopol">Никополь</string>
     <string name="kiev">Киев</string>
