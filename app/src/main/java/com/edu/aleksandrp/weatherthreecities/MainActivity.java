@@ -1,14 +1,11 @@
-package com.example.aleksandrp.weatherthreecities;
+package com.edu.aleksandrp.weatherthreecities;
 
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -16,12 +13,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
-import com.example.aleksandrp.weatherthreecities.api.LoadParams;
+import com.edu.aleksandrp.weatherthreecities.api.LoadParams;
 import com.squareup.picasso.Picasso;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 

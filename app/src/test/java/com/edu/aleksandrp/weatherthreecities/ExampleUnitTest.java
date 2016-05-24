@@ -1,4 +1,4 @@
-package com.example.aleksandrp.weatherthreecities;
+package com.edu.aleksandrp.weatherthreecities;
 
 import org.junit.Test;
 

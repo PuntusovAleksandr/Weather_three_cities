@@ -1,13 +1,12 @@
-package com.example.aleksandrp.weatherthreecities.api;
+package com.edu.aleksandrp.weatherthreecities.api;
 
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
 
-import com.example.aleksandrp.weatherthreecities.MainActivity;
-import com.example.aleksandrp.weatherthreecities.R;
-import com.squareup.picasso.Picasso;
+import com.edu.aleksandrp.weatherthreecities.MainActivity;
+import com.edu.aleksandrp.weatherthreecities.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;

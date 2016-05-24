@@ -1,4 +1,4 @@
-package com.example.aleksandrp.weatherthreecities;
+package com.edu.aleksandrp.weatherthreecities;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="@drawable/backgraund"
-    tools:context="com.example.aleksandrp.weatherthreecities.MainActivity">
+    tools:context="com.edu.aleksandrp.weatherthreecities.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
