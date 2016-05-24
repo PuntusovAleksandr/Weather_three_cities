@@ -1,5 +1,6 @@
 package com.example.aleksandrp.weatherthreecities;
 
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
     private ImageView mIcon;
     private TextView mCity, mTemperature, mMinTemp, mMaxTemp, mState;
     public ProgressBar mProgressBar;
+    private SharedPreferences mSharedPreferences;
+    public static final String FILE_NAME = "settings";
+    public static final String KEY_SHARE = "params";
 
     public static final String
             ID_DNEPR = "709930",
@@ -46,9 +50,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        mSharedPreferences = getSharedPreferences(FILE_NAME, MODE_PRIVATE);
+
         setUi();
 
-        setParams(ID_DNEPR);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setParams(mSharedPreferences.getString(KEY_SHARE, ID_DNEPR));
     }
 
     /**
@@ -66,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setParams(String id) {
+        SharedPreferences.Editor mEditor = mSharedPreferences.edit();
+        mEditor.putString(KEY_SHARE, id);
+        mEditor.apply();
+
         this.keySelectNow = id;
         if (mTimer != null) {
             mTimer.cancel();
