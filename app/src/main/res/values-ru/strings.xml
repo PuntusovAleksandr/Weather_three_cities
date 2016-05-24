@@ -1,7 +1,4 @@
 <resources>
-    <string name="api_weather_key" translatable="false">87c71443ef3991f35c5cc3d0467530ef</string>
-    <string name="general_url" translatable="false">http://api.openweathermap.org/data/2.5/forecast/city?</string>
-    <string name="url_icon" translatable="false">http://openweathermap.org/img/w/</string>
 
     <string name="app_name" translatable="false">Weather three cities</string>
     <string name="dnepr">Днепропетровск</string>
